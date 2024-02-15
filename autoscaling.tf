@@ -11,13 +11,11 @@ resource "aws_autoscaling_group" "web_asg" {
 
   tag {
     key                 = "Name"
-    value               = "Web Server"
+    value               = "Auto-SG Web Server"
     propagate_at_launch = true
   }
 
-  lifecycle {
-    create_before_destroy = true
-  }
+  
 }
 
 resource "aws_launch_configuration" "web_launch_config" {
@@ -25,6 +23,7 @@ resource "aws_launch_configuration" "web_launch_config" {
   image_id = var.ami_id
   instance_type = var.instance_type
   security_groups = [aws_security_group.web_sg.id]
+  associate_public_ip_address = true
 
   user_data = <<-EOF
     #!/bin/bash

@@ -25,5 +25,11 @@ output "web_lb_target_group_arn" {
 output "web_asg_name" {
   value = aws_autoscaling_group.web_asg.name
 }
+output "web_server_1_public_ip" {
+  value = aws_instance.web_server_1.public_ip
+}
 
+output "web_server_2_public_ip" {
+  value = aws_instance.web_server_2.public_ip
+}
 

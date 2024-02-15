@@ -7,7 +7,7 @@ resource "aws_instance" "web_server_1" {
   associate_public_ip_address  = true
 
   tags = {
-    Name = "Web Server 1"
+    Name = "ODC Web Server 1"
   }
 
   user_data = <<-EOF
@@ -31,7 +31,7 @@ resource "aws_instance" "web_server_2" {
   associate_public_ip_address  = true
 
   tags = {
-    Name = "Web Server 2"
+    Name = "ODCWeb Server 2"
   }
 
   user_data = <<-EOF
